@@ -10,12 +10,16 @@ export default function Home({ data = [] }) {
     <Container style={{ paddingTop: 30 }}>
       <h3 className={styles.title}>Piyasalar</h3>
       <Row>
-        {Object.entries(data.rates).map((item) => (
-          <Col key={item[1]} xs={12} md={4}>
-            <Currency value={item} />
-          </Col>
-        ))}
-        <Col xs={6} md={4}>
+        <Col md={9}>
+          <Row>
+            {Object.entries(data.rates).map((item) => (
+              <Col key={item[1]} xs={12} md={4}>
+                <Currency value={item} />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+        <Col md={3}>
           <Exchanger />
         </Col>
       </Row>
