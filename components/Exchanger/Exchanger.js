@@ -21,8 +21,8 @@ function Exchanger() {
           height="48"
           viewBox="0 0 48 48"
         >
-          <g fill="none" fill-rule="evenodd">
-            <g fill="#FFF" fill-rule="nonzero">
+          <g fill="none" fillRule="evenodd">
+            <g fill="#FFF" fillRule="nonzero">
               <g>
                 <g>
                   <g>
