@@ -11,7 +11,7 @@ export default function Home({ data = [] }) {
       <h3 className={styles.title}>Piyasalar</h3>
       <Row>
         {Object.entries(data.rates).map((item) => (
-          <Col key={item[1]} xs={6} md={4}>
+          <Col key={item[1]} xs={12} md={4}>
             <Currency value={item} />
           </Col>
         ))}
