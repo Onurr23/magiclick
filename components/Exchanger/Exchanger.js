@@ -1,17 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Exhanger.module.css";
 import Form from "react-bootstrap/Form";
 function Exchanger() {
+  const currencies = ["TRY", "GBP", "JPY", "USD", "EUR", "NOK", "DKK"];
+  const [input, setInput] = useState("");
+
+  const handleChange = (value) => {
+    setInput(value);
+  };
+
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>Döviz Çevir</h3>
 
       <div className={styles.formContainer}>
-        <Form.Control className={styles.value} />
+        <Form.Control
+          value={input}
+          onChange={(e) => {
+            var reg = /^-?\d+\.?\d*$/;
+            if (reg.test(e.target.value)) {
+              handleChange(e.target.value);
+            } else {
+              alert("Please enter a numeric value");
+            }
+          }}
+          className={styles.value}
+        />
         <Form.Select
           className={styles.currencies}
           aria-label="Default select example"
-        ></Form.Select>
+        >
+          {currencies.map((item) => (
+            <option className={styles.currencyOption} key={item}>
+              {item}
+            </option>
+          ))}
+        </Form.Select>
       </div>
       <div>
         <svg
@@ -43,7 +67,11 @@ function Exchanger() {
           </g>
         </svg>
       </div>
-      <Form.Control className={styles.value} style={{ width: "100%" }} />
+      <Form.Control
+        readOnly
+        className={styles.value}
+        style={{ width: "75%" }}
+      />
     </div>
   );
 }
