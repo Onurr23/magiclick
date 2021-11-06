@@ -1,7 +1,6 @@
 .container {
   padding: 25px 20px;
   background-image: linear-gradient(154deg, #2b3b48 32%, #8093a5 115%);
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,11 +31,22 @@
 }
 
 .currencies {
-  width: 30%;
+  width: 90px;
   border-radius: 0px;
   border-left: 0px;
 }
 .value {
-  width: 70%;
+  width: 140px;
   border-radius: 0px;
+}
+
+.currencyOption {
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: right;
+  color: rgb(152, 5, 5);
 }
