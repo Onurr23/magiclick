@@ -1,34 +1,61 @@
 import React, { useState } from "react";
 import styles from "./Exhanger.module.css";
 import Form from "react-bootstrap/Form";
+import { getAction } from "../../actions/actions";
+const currencies = ["GBP", "JPY", "USD", "EUR", "NOK", "DKK"];
 function Exchanger() {
-  const currencies = ["TRY", "GBP", "JPY", "USD", "EUR", "NOK", "DKK"];
+  const reg = /^-?\d+\.?\d*$/;
   const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
+  const [currency, setCurrency] = useState(currencies[2]);
 
-  const handleChange = (value) => {
-    setInput(value);
+  const changeValue = async (value) => {
+    if (value == "") {
+      setOutput("");
+      setInput(value);
+    } else {
+      setInput(value);
+      const data = await getAction(
+        `convert?from=${currency}&to=TRY&amount=${value}`
+      );
+      setOutput(data.result);
+    }
+  };
+
+  const changeCurrency = async (value) => {
+    setCurrency(value);
+    if (input == "") {
+      return; // hali hazırda bir input değeri yoksa gereksiz istek atılmasını engellemek için.
+    } else {
+      const data = await getAction(
+        `convert?from=${value}&to=TRY&amount=${input}`
+      );
+      setOutput(data.result);
+    }
   };
 
   return (
     <div className={styles.container}>
       <h3 className={styles.title}>Döviz Çevir</h3>
-
       <div className={styles.formContainer}>
         <Form.Control
           value={input}
           onChange={(e) => {
-            var reg = /^-?\d+\.?\d*$/;
             if (reg.test(e.target.value)) {
-              handleChange(e.target.value);
+              changeValue(e.target.value);
             } else {
-              alert("Please enter a numeric value");
+              if (e.target.value === "") {
+                changeValue(e.target.value);
+              } else {
+                alert("Please enter a numeric value");
+              }
             }
           }}
           className={styles.value}
         />
         <Form.Select
           className={styles.currencies}
-          aria-label="Default select example"
+          onChange={(e) => changeCurrency(e.target.value)}
         >
           {currencies.map((item) => (
             <option className={styles.currencyOption} key={item}>
@@ -67,11 +94,20 @@ function Exchanger() {
           </g>
         </svg>
       </div>
-      <Form.Control
-        readOnly
-        className={styles.value}
-        style={{ width: "75%" }}
-      />
+      <div style={{ display: "flex" }}>
+        <Form.Control
+          value={output}
+          readOnly
+          className={styles.value}
+          style={{ width: 175 }}
+        />
+        <Form.Control
+          value={"TL"}
+          readOnly
+          className={styles.value}
+          style={{ width: 50, borderLeft: "none" }}
+        />
+      </div>
     </div>
   );
 }
