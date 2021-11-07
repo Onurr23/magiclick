@@ -7,11 +7,6 @@
   border-bottom: 1px solid #bac9d5;
 }
 
-.img {
-  width: 10%;
-  height: 10%;
-}
-
 .inner {
   display: flex;
   flex-direction: row;
