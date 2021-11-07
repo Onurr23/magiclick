@@ -98,8 +98,7 @@ function Exchanger() {
         <Form.Control
           value={output}
           readOnly
-          className={styles.value}
-          style={{ width: 175 }}
+          className={styles.exchangeResult}
         />
         <Form.Control
           value={"TL"}
