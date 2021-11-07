@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import styles from "./Exhanger.module.css";
 import Form from "react-bootstrap/Form";
 import { getAction } from "../../actions/actions";
-const currencies = ["GBP", "JPY", "USD", "EUR", "NOK", "DKK"];
+const currencies = ["EUR", "GBP", "JPY", "USD", "NOK", "DKK"];
 function Exchanger() {
   const reg = /^-?\d+\.?\d*$/;
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
-  const [currency, setCurrency] = useState(currencies[2]);
+  const [currency, setCurrency] = useState(currencies[0]);
 
   const changeValue = async (value) => {
     if (value == "") {
