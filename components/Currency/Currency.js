@@ -6,9 +6,8 @@ import usd from "../../public/usd.png";
 import dkk from "../../public/dkk.png";
 import gbp from "../../public/gbp.png";
 import eur from "../../public/eur.png";
-import jpy from "../../public/yen.png";
+import jpy from "../../public/jpy.png";
 function Currency({ value }) {
-  console.log(value);
   const renderCurrencyFullName = () => {
     if (value[0] === "USD") {
       return <p className={styles.longCurrency}>Amerikan Doları</p>;
@@ -43,21 +42,22 @@ function Currency({ value }) {
 
   return (
     <div className={styles.main}>
-      <div className={styles.inner}>
-        <Image
-          src={renderFlag()}
-          alt="Picture of the author"
-          width={50}
-          height={1}
-        />
+      <div style={{ display: "flex" }}>
+        <div style={{ marginRight: 14 }}>
+          <Image src={renderFlag()} alt="Picture of the author" />
+        </div>
         <div>
-          <p className={styles.shortCurrency}>{value[0]}</p>
+          <span className={styles.shortCurrency}>{value[0]}</span>
           {renderCurrencyFullName()}
         </div>
       </div>
       <div className={styles.inner}>
         <div>
-          <p className={styles.buy}>ALIŞ</p>
+          <span className={styles.buy}>ALIŞ</span>
+          <p className={styles.price}>{value[1]}</p>
+        </div>
+        <div>
+          <span className={styles.buy}>SATIŞ</span>
           <p className={styles.price}>{value[1]}</p>
         </div>
       </div>
