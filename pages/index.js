@@ -7,14 +7,19 @@ import Currency from "../components/Currency/Currency";
 import Exchanger from "../components/Exchanger/Exchanger";
 export default function Home({ data = [] }) {
   return (
-    <Container style={{ paddingTop: 30, paddingBottom: 30 }}>
+    <Container
+      style={{
+        paddingTop: 30,
+        paddingBottom: 30,
+      }}
+    >
       <h3 className={styles.title}>Piyasalar</h3>
       <Row>
         <Col md={8}>
           <Row>
-            {Object.entries(data.rates).map((item) => (
-              <Col key={item[1]} xs={12} md={6}>
-                <Currency value={item} />
+            {Object.entries(data.rates).map((item, index) => (
+              <Col key={index} xs={12} md={6}>
+                <Currency index={index} value={item} />
               </Col>
             ))}
           </Row>

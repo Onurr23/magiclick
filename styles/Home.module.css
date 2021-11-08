@@ -27,7 +27,7 @@
 
 .allMarketsBtn {
   background-color: #fff;
-  border: 1px solid #2b3b48;
+  border: 2px solid #4f6477;
   font-size: 16px;
   font-weight: 500;
   font-stretch: normal;
@@ -69,12 +69,18 @@
   .allMarketsBtn {
     width: 100%;
     margin-top: 15px;
+    border: none;
   }
   .detailBtn {
     width: 100%;
-    margin-top: 15px;
+    margin-top: 25px;
   }
   .arrow {
     display: block;
+  }
+  .title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
   }
 }

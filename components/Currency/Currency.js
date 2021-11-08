@@ -7,7 +7,7 @@ import dkk from "../../public/dkk.png";
 import gbp from "../../public/gbp.png";
 import eur from "../../public/eur.png";
 import jpy from "../../public/jpy.png";
-function Currency({ value }) {
+function Currency({ value, index }) {
   console.log(value);
   const renderCurrencyFullName = () => {
     if (value[0] === "USD") {

@@ -51,6 +51,7 @@ function Exchanger() {
               }
             }
           }}
+          style={{ color: "#2b3b48" }}
           className={styles.value}
         />
         <Form.Select
