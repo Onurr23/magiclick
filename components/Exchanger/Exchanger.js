@@ -94,7 +94,7 @@ function Exchanger() {
           </g>
         </svg>
       </div>
-      <div style={{ display: "flex" }}>
+      <div className={styles.formContainer}>
         <Form.Control
           value={output}
           readOnly
@@ -106,7 +106,7 @@ function Exchanger() {
           className={styles.value}
           style={{
             width: 50,
-            borderLeft: "none",
+            border: "none",
           }}
         />
       </div>

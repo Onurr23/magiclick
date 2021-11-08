@@ -21,6 +21,11 @@
   margin-bottom: 20px;
 }
 
+.resultContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .title {
   font-size: 20px;
   font-weight: 500;
@@ -41,9 +46,10 @@
   letter-spacing: normal;
   font-stretch: normal;
   font-style: normal;
+  font-size: 15px;
 }
 .value {
-  width: 120px;
+  width: 135px;
   height: 48px;
   border-radius: 0px;
   color: #2b3b48;
@@ -54,7 +60,7 @@
 }
 
 .currencyOption {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
   font-stretch: normal;
   font-style: normal;
@@ -65,7 +71,7 @@
 }
 
 .exchangeResult {
-  width: 150px;
+  width: 165px;
   border-radius: 0px;
   color: #2b3b48;
   font-weight: 500;
@@ -74,9 +80,20 @@
   font-style: normal;
 }
 
+.tryText {
+  width: 50px;
+  border-radius: 0;
+  border: none;
+}
+
 @media only screen and (max-width: 768px) {
   .container {
     width: 100%;
+    padding: 0;
+  }
+
+  .formContainer {
+    width: 85%;
   }
   .value {
     width: 100%;
