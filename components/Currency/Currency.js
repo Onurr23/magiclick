@@ -8,6 +8,7 @@ import gbp from "../../public/gbp.png";
 import eur from "../../public/eur.png";
 import jpy from "../../public/jpy.png";
 function Currency({ value }) {
+  console.log(value);
   const renderCurrencyFullName = () => {
     if (value[0] === "USD") {
       return <p className={styles.longCurrency}>Amerikan Doları</p>;
@@ -54,11 +55,11 @@ function Currency({ value }) {
       <div className={styles.inner}>
         <div>
           <span className={styles.buy}>ALIŞ</span>
-          <p className={styles.price}>{value[1]}</p>
+          <p className={styles.price}>{Number((1 / value[1]).toFixed(4))}</p>
         </div>
         <div>
           <span className={styles.buy}>SATIŞ</span>
-          <p className={styles.price}>{value[1]}</p>
+          <p className={styles.price}>{Number((1 / value[1]).toFixed(4))}</p>
         </div>
       </div>
     </div>
