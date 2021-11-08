@@ -5,6 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 1px solid #bac9d5;
+  margin-right: 50px;
 }
 
 .inner {
@@ -54,4 +55,10 @@
   letter-spacing: normal;
   text-align: right;
   color: #2b3b48;
+}
+
+@media only screen and (max-width: 768px) {
+  .main {
+    width: 100%;
+  }
 }
