@@ -8,7 +8,6 @@ import gbp from "../../public/gbp.png";
 import eur from "../../public/eur.png";
 import jpy from "../../public/jpy.png";
 function Currency({ value, index }) {
-  console.log(value);
   const renderCurrencyFullName = () => {
     if (value[0] === "USD") {
       return <p className={styles.longCurrency}>Amerikan Doları</p>;
