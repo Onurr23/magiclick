@@ -7,3 +7,72 @@
   letter-spacing: normal;
   color: #2b3b48;
 }
+
+.detailBtn {
+  background-color: #2b3b48;
+  border: none;
+  width: 90%;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.94px;
+  text-align: center;
+  color: #fff;
+  border-radius: 0;
+  height: 48px;
+}
+
+.allMarketsBtn {
+  background-color: #fff;
+  border: 1px solid #2b3b48;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  color: #2b3b48;
+  width: 90%;
+  height: 48px;
+  border-radius: 0;
+  position: relative;
+}
+
+.arrow {
+  margin: 30px auto;
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #2b3b48;
+  border-left: 2px solid #2b3b48;
+  transform: rotate(135deg);
+  position: absolute;
+  right: 50px;
+  bottom: -15px;
+  display: none;
+}
+
+.arrow::after {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 20px;
+  background-color: #2b3b48;
+  transform: rotate(-45deg) translate(7px, 2px);
+  left: 0;
+  top: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .allMarketsBtn {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .detailBtn {
+    width: 100%;
+  }
+  .arrow {
+    display: block;
+  }
+}

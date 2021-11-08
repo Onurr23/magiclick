@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import styles from "../styles/Home.module.css";
 import Currency from "../components/Currency/Currency";
 import Exchanger from "../components/Exchanger/Exchanger";
+import Button from "react-bootstrap/Button";
 export default function Home({ data = [] }) {
   return (
     <Container style={{ paddingTop: 30, paddingBottom: 30 }}>
@@ -21,6 +22,23 @@ export default function Home({ data = [] }) {
         </Col>
         <Col md={3}>
           <Exchanger />
+        </Col>
+      </Row>
+      <Row>
+        <Col md={8}>
+          <Row>
+            <Col md={6}>
+              <Button className={styles.detailBtn} size={"lg"}>
+                Detaylı Bilgi
+              </Button>
+            </Col>
+            <Col md={6}>
+              <Button className={styles.allMarketsBtn} size={"lg"}>
+                Tüm Piyasalar
+                <div className={styles.arrow}></div>
+              </Button>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>
