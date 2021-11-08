@@ -8,7 +8,6 @@ function Exchanger() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [currency, setCurrency] = useState(currencies[0]);
-
   const changeValue = async (value) => {
     if (value == "") {
       setOutput("");
@@ -46,8 +45,6 @@ function Exchanger() {
             } else {
               if (e.target.value === "") {
                 changeValue(e.target.value);
-              } else {
-                alert("Please enter a numeric value");
               }
             }
           }}
