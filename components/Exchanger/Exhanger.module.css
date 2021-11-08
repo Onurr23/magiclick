@@ -36,11 +36,21 @@
   width: 80px;
   border-radius: 0px;
   border-left: 0px;
+  color: #2b3b48;
+  font-weight: 500;
+  letter-spacing: normal;
+  font-stretch: normal;
+  font-style: normal;
 }
 .value {
   width: 120px;
   height: 48px;
   border-radius: 0px;
+  color: #2b3b48;
+  font-weight: 500;
+  letter-spacing: normal;
+  font-stretch: normal;
+  font-style: normal;
 }
 
 .currencyOption {
@@ -57,6 +67,11 @@
 .exchangeResult {
   width: 150px;
   border-radius: 0px;
+  color: #2b3b48;
+  font-weight: 500;
+  letter-spacing: normal;
+  font-stretch: normal;
+  font-style: normal;
 }
 
 @media only screen and (max-width: 768px) {

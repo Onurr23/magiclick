@@ -104,7 +104,10 @@ function Exchanger() {
           value={"TL"}
           readOnly
           className={styles.value}
-          style={{ width: 50, borderLeft: "none" }}
+          style={{
+            width: 50,
+            borderLeft: "none",
+          }}
         />
       </div>
     </div>
