@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import styles from "../styles/Home.module.css";
 import Currency from "../components/Currency/Currency";
 import Exchanger from "../components/Exchanger/Exchanger";
+import Head from "next/head";
 export default function Home({ data = [] }) {
   return (
     <Container
@@ -13,6 +14,9 @@ export default function Home({ data = [] }) {
         paddingBottom: 30,
       }}
     >
+      <Head>
+        <title>Exchanger</title>
+      </Head>
       <h3 className={styles.title}>Piyasalar</h3>
       <Row>
         <Col md={8}>
